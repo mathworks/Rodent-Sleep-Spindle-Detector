@@ -38,7 +38,7 @@ The multi-window Rodent Sleep Spindle Detector app can identify sleep spindles w
 
 1. Open the app after installation.
 2. Open EEG and/or video of a rodent
-3. Use sliders or their respective edit fields to adjust the binary threshold, structural element size, and time.
+3. Use sliders or their respective edit fields to adjust the time, epoch, zoom, binary threshold, and area threshold.
 4. Click the Analyze button or File>Analyze in the menu to analyze the entire EEG and generate a spreadsheet of results.
 
 Validation (Optional)
