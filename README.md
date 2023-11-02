@@ -42,6 +42,7 @@ The multi-window Rodent Sleep Spindle Detector app can identify sleep spindles w
 4. Click the Analyze button or File>Analyze in the menu to analyze the entire EEG and generate a spreadsheet of results.
 
 Validation (Optional)
+
 5. Select the Validation tab
 6. Click "Load GroundTruth"
 7. Click "Calculate"
