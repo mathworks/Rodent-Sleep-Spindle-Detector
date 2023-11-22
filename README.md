@@ -3,7 +3,8 @@
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=kevinscottholly/SleepSpindleDetector)
 [![View SleepSpindleDetector on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/SleepSpindleDetector)
 
-![Alt-Text](https://github.com/kevinscottholly/SleepSpindleDetector/blob/main/Sleep%20Spindle%20Detector%20Alpha_resources/SleepSpindleIcon.png?raw=true)
+![Alt-Text](https://github.com/mathworks/Rodent-Sleep-Spindle-Detector/blob/main/Sleep%20Spindle%20Detector%20Alpha_resources/SleepSpindleIcon.png?raw=true)
+
 
 ## Setup 
 
