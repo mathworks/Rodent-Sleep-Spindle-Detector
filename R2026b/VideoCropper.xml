@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<MATLABApp schemaVersion='1.0.0' release='R2026b.0' minRelease='R2026b'>
+    <UIFigure name='CropImageUIFigure'>
+        <HandleVisibility>'on'</HandleVisibility>
+        <Icon>'SleepSpindleIcon.PNG'</Icon>
+        <Name>'Crop Image'</Name>
+        <Position>[100 100 460 452]</Position>
+        <Children>
+            <Menu name='FileMenu'>
+                <Text>'File'</Text>
+                <Children>
+                    <Menu name='CropMenu'>
+                        <Enable>'off'</Enable>
+                        <MenuSelectedFcn>CropMenuSelected</MenuSelectedFcn>
+                        <Text>'Crop'</Text>
+                        <Tooltip>'Crop the selected region of interest'</Tooltip>
+                    </Menu>
+                </Children>
+            </Menu>
+            <Toolbar name='Toolbar'>
+                <Children>
+                    <PushTool name='PushTool'>
+                        <ClickedCallback>PushToolClicked</ClickedCallback>
+                        <Icon>'getrect.png'</Icon>
+                        <Tooltip>'Select a rectangular region of interest'</Tooltip>
+                    </PushTool>
+                </Children>
+            </Toolbar>
+            <UIAxes name='UIAxes'>
+                <Position>[30 51 393 353]</Position>
+                <Toolbar>
+                    <Visible>'off'</Visible>
+                </Toolbar>
+            </UIAxes>
+        </Children>
+    </UIFigure>
+    <RunConfiguration>
+        <StartupFcn>startupFcn</StartupFcn>
+    </RunConfiguration>
+    <AppDetails>
+        <Name>Crop Image</Name>
+        <Version>1.0</Version>
+    </AppDetails>
+    <InternalData>
+        <AppId>0cb79b56-ce91-44b7-8bb0-11c43165f487</AppId>
+    </InternalData>
+    <!-- Thumbnail is used by file previewers. To change how the thumbnail is captured or stored, use the App Details dialog box in App Designer. -->
+    <Thumbnail autoCapture='true'>data:image/jpg;base64,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</Thumbnail>
+</MATLABApp>

@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<MATLABApp schemaVersion='1.0.0' release='R2026b.0' minRelease='R2026b'>
+    <UIFigure name='SleepSpindleDetectorEEGWindowUIFigure'>
+        <HandleVisibility>'on'</HandleVisibility>
+        <Icon>'SleepSpindleIconSmall.png'</Icon>
+        <Name>'Sleep Spindle Detector: EEG Window'</Name>
+        <Position>[100 100 850 402]</Position>
+        <Children>
+            <GridLayout name='GridLayout'>
+                <ColumnWidth>{'1x'}</ColumnWidth>
+                <Padding>[18.2000122070312 6.30000305175781 18.2000122070312 6.30000305175781]</Padding>
+                <RowHeight>{'1x', '1x', '1x'}</RowHeight>
+                <RowSpacing>6.30000305175781</RowSpacing>
+                <Children>
+                    <UIAxes name='PeakAxis'>
+                        <FontSize>14</FontSize>
+                        <Layout>
+                            <Column>1</Column>
+                            <Row>3</Row>
+                        </Layout>
+                        <Title>
+                            <String>'Find Peak Envelope of Absolute Value of Filtered Oscillatory Component'</String>
+                        </Title>
+                        <Toolbar>
+                            <Visible>'off'</Visible>
+                        </Toolbar>
+                        <XLabel>
+                            <String>'Time (s)'</String>
+                        </XLabel>
+                        <XLim>[0 30]</XLim>
+                        <XTick>[0 5 10 15 20 25 30]</XTick>
+                        <XTickLabel>{'0'; '5'; '10'; '15'; '20'; '25'; '30'}</XTickLabel>
+                        <ZLabel>
+                            <String>'Z'</String>
+                        </ZLabel>
+                    </UIAxes>
+                    <UIAxes name='FilterAxis'>
+                        <FontSize>14</FontSize>
+                        <Layout>
+                            <Column>1</Column>
+                            <Row>2</Row>
+                        </Layout>
+                        <Title>
+                            <String>'Filtered Oscillatory Component'</String>
+                        </Title>
+                        <Toolbar>
+                            <Visible>'off'</Visible>
+                        </Toolbar>
+                        <XLabel>
+                            <String>'Time (s)'</String>
+                        </XLabel>
+                        <XLim>[0 30]</XLim>
+                        <XTick>[0 5 10 15 20 25 30]</XTick>
+                        <XTickLabel>{'0'; '5'; '10'; '15'; '20'; '25'; '30'}</XTickLabel>
+                        <ZLabel>
+                            <String>'Z'</String>
+                        </ZLabel>
+                    </UIAxes>
+                    <UIAxes name='RawAxis'>
+                        <FontSize>14</FontSize>
+                        <Layout>
+                            <Column>1</Column>
+                            <Row>1</Row>
+                        </Layout>
+                        <Title>
+                            <String>'Raw'</String>
+                        </Title>
+                        <Toolbar>
+                            <Visible>'off'</Visible>
+                        </Toolbar>
+                        <XLabel>
+                            <String>'TIme (s)'</String>
+                        </XLabel>
+                        <XLim>[0 30]</XLim>
+                        <XTick>[0 5 10 15 20 25 30]</XTick>
+                        <XTickLabel>{'0'; '5'; '10'; '15'; '20'; '25'; '30'}</XTickLabel>
+                    </UIAxes>
+                </Children>
+            </GridLayout>
+            <Label name='SpindlecountLabel'>
+                <Position>[19 1 354 29]</Position>
+                <Text>'Spindle count: '</Text>
+            </Label>
+        </Children>
+    </UIFigure>
+    <RunConfiguration>
+        <StartupFcn>startupFcn</StartupFcn>
+    </RunConfiguration>
+    <AppDetails>
+        <Name>Sleep Spindle Detector: EEG Window</Name>
+        <Version>1.0</Version>
+    </AppDetails>
+    <InternalData>
+        <AppId>1f7b0153-92cb-4955-a309-a2e0c2598e9d</AppId>
+    </InternalData>
+    <!-- Thumbnail is used by file previewers. To change how the thumbnail is captured or stored, use the App Details dialog box in App Designer. -->
+    <Thumbnail autoCapture='true'>data:image/jpg;base64,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</Thumbnail>
+</MATLABApp>

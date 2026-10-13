@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<MATLABApp schemaVersion='1.0.0' release='R2026b.0' minRelease='R2026b'>
+    <UIFigure name='SleepSpindleDetectorVideoWindowUIFigure'>
+        <HandleVisibility>'on'</HandleVisibility>
+        <Icon>'SleepSpindleIconSmall.png'</Icon>
+        <Name>'Sleep Spindle Detector: Video Window'</Name>
+        <Position>[100 100 465 488]</Position>
+        <Children>
+            <GridLayout name='GridLayout'>
+                <RowHeight>{'1x', '12.33x', '12.33x'}</RowHeight>
+                <Children>
+                    <UIAxes name='Thresholded_ax'>
+                        <Layout>
+                            <Column>2</Column>
+                            <Row>3</Row>
+                        </Layout>
+                        <Title>
+                            <String>'Title'</String>
+                        </Title>
+                        <Toolbar>
+                            <Visible>'off'</Visible>
+                        </Toolbar>
+                        <Visible>'off'</Visible>
+                        <XLabel>
+                            <String>'X'</String>
+                        </XLabel>
+                        <YLabel>
+                            <String>'Y'</String>
+                        </YLabel>
+                        <ZLabel>
+                            <String>'Z'</String>
+                        </ZLabel>
+                    </UIAxes>
+                    <UIAxes name='Difference_ax'>
+                        <Layout>
+                            <Column>1</Column>
+                            <Row>3</Row>
+                        </Layout>
+                        <Title>
+                            <String>'Title'</String>
+                        </Title>
+                        <Toolbar>
+                            <Visible>'off'</Visible>
+                        </Toolbar>
+                        <Visible>'off'</Visible>
+                        <XLabel>
+                            <String>'X'</String>
+                        </XLabel>
+                        <YLabel>
+                            <String>'Y'</String>
+                        </YLabel>
+                        <ZLabel>
+                            <String>'Z'</String>
+                        </ZLabel>
+                    </UIAxes>
+                    <UIAxes name='CurSec_ax'>
+                        <Layout>
+                            <Column>2</Column>
+                            <Row>2</Row>
+                        </Layout>
+                        <Title>
+                            <String>'Title'</String>
+                        </Title>
+                        <Toolbar>
+                            <Visible>'off'</Visible>
+                        </Toolbar>
+                        <Visible>'off'</Visible>
+                        <XLabel>
+                            <String>'X'</String>
+                        </XLabel>
+                        <YLabel>
+                            <String>'Y'</String>
+                        </YLabel>
+                        <ZLabel>
+                            <String>'Z'</String>
+                        </ZLabel>
+                    </UIAxes>
+                    <UIAxes name='PrevSec_ax'>
+                        <Layout>
+                            <Column>1</Column>
+                            <Row>2</Row>
+                        </Layout>
+                        <Title>
+                            <String>'Title'</String>
+                        </Title>
+                        <Toolbar>
+                            <Visible>'off'</Visible>
+                        </Toolbar>
+                        <Visible>'off'</Visible>
+                        <XLabel>
+                            <String>'X'</String>
+                        </XLabel>
+                        <YLabel>
+                            <String>'Y'</String>
+                        </YLabel>
+                        <ZLabel>
+                            <String>'Z'</String>
+                        </ZLabel>
+                    </UIAxes>
+                </Children>
+            </GridLayout>
+        </Children>
+    </UIFigure>
+    <RunConfiguration>
+        <StartupFcn>startupFcn</StartupFcn>
+    </RunConfiguration>
+    <AppDetails>
+        <Name>Sleep Spindle Detector: Video Window</Name>
+        <Version>1.0</Version>
+    </AppDetails>
+    <InternalData>
+        <AppId>a81fc1d2-c3d8-4a2a-b6ff-c164d2460697</AppId>
+    </InternalData>
+    <!-- Thumbnail is used by file previewers. To change how the thumbnail is captured or stored, use the App Details dialog box in App Designer. -->
+    <Thumbnail autoCapture='true'>data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCACgANwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9k=</Thumbnail>
+</MATLABApp>

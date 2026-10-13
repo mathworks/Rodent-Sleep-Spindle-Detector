@@ -1,0 +1,483 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<MATLABApp schemaVersion='1.0.0' release='R2026b.0' minRelease='R2026b'>
+    <UIFigure name='SleepSpindleDetectorControllerUIFigure'>
+        <CloseRequestFcn>SleepSpindleDetectorControllerUIFigureCloseRequest</CloseRequestFcn>
+        <HandleVisibility>'on'</HandleVisibility>
+        <Icon>'SleepSpindleIconSmall.png'</Icon>
+        <Name>'Sleep Spindle Detector: Controller'</Name>
+        <Position>[100 100 1089 372]</Position>
+        <Children>
+            <Menu name='FIleMenu'>
+                <Text>'FIle'</Text>
+                <Children>
+                    <Menu name='LoadEEGMenu'>
+                        <MenuSelectedFcn>LoadEEGMenuSelected</MenuSelectedFcn>
+                        <Text>'Load EEG'</Text>
+                    </Menu>
+                    <Menu name='LoadVideoMenu'>
+                        <MenuSelectedFcn>LoadVideoMenuSelected</MenuSelectedFcn>
+                        <Text>'Load Video'</Text>
+                    </Menu>
+                    <Menu name='SaveProjectMenu'>
+                        <Enable>'off'</Enable>
+                        <Text>'Save Project'</Text>
+                    </Menu>
+                    <Menu name='LoadProjectMenu'>
+                        <Text>'Load Project'</Text>
+                    </Menu>
+                    <Menu name='AnalyzeMenu'>
+                        <Enable>'off'</Enable>
+                        <MenuSelectedFcn>AnalyzeMenuSelected</MenuSelectedFcn>
+                        <Text>'Analyze'</Text>
+                    </Menu>
+                </Children>
+            </Menu>
+            <Menu name='EditMenu'>
+                <Text>'Edit'</Text>
+                <Children>
+                    <Menu name='CropImageMenu'>
+                        <Enable>'off'</Enable>
+                        <MenuSelectedFcn>CropImageMenuSelected</MenuSelectedFcn>
+                        <Text>'Crop Image'</Text>
+                    </Menu>
+                    <Menu name='UncropImageMenu'>
+                        <Enable>'off'</Enable>
+                        <MenuSelectedFcn>UncropImageMenuSelected</MenuSelectedFcn>
+                        <Text>'Uncrop Image'</Text>
+                    </Menu>
+                    <Menu name='VideofpsMenu'>
+                        <MenuSelectedFcn>VideofpsMenuSelected</MenuSelectedFcn>
+                        <Text>'Video fps'</Text>
+                    </Menu>
+                </Children>
+            </Menu>
+            <Menu name='ViewMenu'>
+                <Text>'View'</Text>
+                <Children>
+                    <Menu name='EEGMenu'>
+                        <Checked>'on'</Checked>
+                        <Text>'EEG'</Text>
+                    </Menu>
+                    <Menu name='VideoMenu'>
+                        <Checked>'on'</Checked>
+                        <Text>'Video'</Text>
+                    </Menu>
+                    <Menu name='ResultsMenu'>
+                        <Checked>'on'</Checked>
+                        <Text>'Results'</Text>
+                    </Menu>
+                </Children>
+            </Menu>
+            <Menu name='AnalyzeMenu_2'>
+                <Text>'Analyze'</Text>
+                <Children>
+                    <Menu name='StatsMenu'>
+                        <MenuSelectedFcn>StatsMenuSelected</MenuSelectedFcn>
+                        <Text>'Stats'</Text>
+                    </Menu>
+                </Children>
+            </Menu>
+            <GridLayout name='GridLayout'>
+                <ColumnSpacing>1.94444237815009</ColumnSpacing>
+                <ColumnWidth>{5, 35, 35, 28, '0.1x', 4, '0.1x', 76, 22, 19, 'fit', '0.3x', 'fit', 35, '0.3x', 'fit', 19, 16, 19, '0.3x', 'fit', 35, '0.3x', 19}</ColumnWidth>
+                <Padding>[1.94444237815009 5.86922733600323 1.94444237815009 5.86922733600323]</Padding>
+                <RowHeight>{'fit', 19, 'fit', 'fit', 19, 'fit', 'fit', 19, 'fit', 'fit', 19, 16, 13, 19, '1x'}</RowHeight>
+                <RowSpacing>5.86922733600323</RowSpacing>
+                <Children>
+                    <Label name='EEGFileDropDownLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <Layout>
+                            <Column>[1 8]</Column>
+                            <Row>1</Row>
+                        </Layout>
+                        <Text>'EEG File'</Text>
+                    </Label>
+                    <Label name='TimesSliderLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <HorizontalAlignment>'center'</HorizontalAlignment>
+                        <Layout>
+                            <Column>16</Column>
+                            <Row>1</Row>
+                        </Layout>
+                        <Text>'Time (s):'</Text>
+                    </Label>
+                    <NumericEditField name='TimesEditField'>
+                        <Enable>'off'</Enable>
+                        <HorizontalAlignment>'center'</HorizontalAlignment>
+                        <Layout>
+                            <Column>[17 18]</Column>
+                            <Row>1</Row>
+                        </Layout>
+                        <ValueChangedFcn>TimesEditFieldValueChanged</ValueChangedFcn>
+                    </NumericEditField>
+                    <DropDown name='EEGFileDropDown' label='EEGFileDropDownLabel'>
+                        <Enable>'off'</Enable>
+                        <Items>{'Select File...'}</Items>
+                        <Layout>
+                            <Column>[1 8]</Column>
+                            <Row>2</Row>
+                        </Layout>
+                        <Value>'Select File...'</Value>
+                        <ValueChangedFcn>EEGFileDropDownValueChanged</ValueChangedFcn>
+                    </DropDown>
+                    <Button name='OpenEEGFile'>
+                        <ButtonPushedFcn>OpenEEGFileButtonPushed</ButtonPushedFcn>
+                        <Icon>'file_open.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>9</Column>
+                            <Row>2</Row>
+                        </Layout>
+                        <Text>{''; ''}</Text>
+                        <Tooltip>'Load EEG file (EDF format)'</Tooltip>
+                    </Button>
+                    <Button name='LeftArrowTime'>
+                        <ButtonPushedFcn>LeftArrowTimeButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'LeftArrow.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>10</Column>
+                            <Row>2</Row>
+                        </Layout>
+                        <Text>''</Text>
+                    </Button>
+                    <Slider name='TimesSlider'>
+                        <Enable>'off'</Enable>
+                        <Layout>
+                            <Column>[11 23]</Column>
+                            <Row>[2 3]</Row>
+                        </Layout>
+                        <Limits>[0 30]</Limits>
+                        <ValueChangedFcn>TimesSliderValueChanged</ValueChangedFcn>
+                        <ValueChangingFcn>TimesSliderValueChanging</ValueChangingFcn>
+                    </Slider>
+                    <Button name='RightArrowTime'>
+                        <ButtonPushedFcn>RightArrowTimeButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'RightArrow.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>24</Column>
+                            <Row>2</Row>
+                        </Layout>
+                        <Text>''</Text>
+                    </Button>
+                    <Label name='VideoFileDropDownLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <Layout>
+                            <Column>[1 8]</Column>
+                            <Row>4</Row>
+                        </Layout>
+                        <Text>'Video File'</Text>
+                    </Label>
+                    <Label name='EpochLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <HorizontalAlignment>'center'</HorizontalAlignment>
+                        <Layout>
+                            <Column>16</Column>
+                            <Row>4</Row>
+                        </Layout>
+                        <Text>'Epoch:'</Text>
+                    </Label>
+                    <NumericEditField name='EpochEditField'>
+                        <Enable>'off'</Enable>
+                        <HorizontalAlignment>'center'</HorizontalAlignment>
+                        <Layout>
+                            <Column>[17 18]</Column>
+                            <Row>4</Row>
+                        </Layout>
+                        <Value>21</Value>
+                        <ValueChangedFcn>EpochEditFieldValueChanged</ValueChangedFcn>
+                    </NumericEditField>
+                    <DropDown name='VideoFileDropDown' label='VideoFileDropDownLabel'>
+                        <Enable>'off'</Enable>
+                        <Items>{'Select File...'}</Items>
+                        <Layout>
+                            <Column>[1 8]</Column>
+                            <Row>5</Row>
+                        </Layout>
+                        <Value>'Select File...'</Value>
+                    </DropDown>
+                    <Button name='OpenVideoFile'>
+                        <ButtonPushedFcn>OpenVideoFileButtonPushed</ButtonPushedFcn>
+                        <Icon>'file_open.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>9</Column>
+                            <Row>5</Row>
+                        </Layout>
+                        <Text>{''; ''}</Text>
+                        <Tooltip>{'Load video of rodent during EEG recording. The video formats include those listed below.'; ''; 'All Platforms: AVI, including uncompressed, indexed, grayscale, and Motion JPEG-encoded video (.avi), Motion JPEG 2000 (.mj2)'; 'All Windows: MPEG-1 (.mpg), Windows Media Video (.wmv, .asf, .asx), Any format supported by Microsoft® DirectShow®'; 'Windows 7 or later: MPEG-4, including H.264 encoded video (.mp4, .m4v), Apple QuickTime Movie (.mov), Any format supported by Microsoft Media Foundation'; 'Macintosh: Most formats supported by QuickTime Player, including: MPEG-1 (.mpg), MPEG-4, including H.264 encoded video (.mp4, .m4v), Apple QuickTime Movie (.mov), 3GPP, 3GPP2, AVCHD, DV'; 'Note: For OS X Yosemite (Version 10.10) and later, MPEG-4/H.264 files play correctly, but display an inexact frame rate.'}</Tooltip>
+                    </Button>
+                    <Button name='LeftArrowEpoch'>
+                        <ButtonPushedFcn>LeftArrowEpochButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'LeftArrow.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>10</Column>
+                            <Row>5</Row>
+                        </Layout>
+                        <Text>''</Text>
+                    </Button>
+                    <Slider name='EpochSlider' label='EpochLabel'>
+                        <Enable>'off'</Enable>
+                        <Layout>
+                            <Column>[11 23]</Column>
+                            <Row>[5 6]</Row>
+                        </Layout>
+                        <Limits>[1 30]</Limits>
+                        <MinorTicksMode>'manual'</MinorTicksMode>
+                        <Value>21</Value>
+                        <ValueChangedFcn>EpochSliderValueChanged</ValueChangedFcn>
+                    </Slider>
+                    <Button name='RightArrowEpoch'>
+                        <ButtonPushedFcn>RightArrowEpochButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'RightArrow.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>24</Column>
+                            <Row>5</Row>
+                        </Layout>
+                        <Text>''</Text>
+                    </Button>
+                    <Label name='ChannelDropDownLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <Layout>
+                            <Column>[1 8]</Column>
+                            <Row>7</Row>
+                        </Layout>
+                        <Text>'Channel'</Text>
+                    </Label>
+                    <Label name='ZoomLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <HorizontalAlignment>'center'</HorizontalAlignment>
+                        <Layout>
+                            <Column>13</Column>
+                            <Row>7</Row>
+                        </Layout>
+                        <Text>'Zoom:'</Text>
+                    </Label>
+                    <NumericEditField name='ZoomEditField'>
+                        <Enable>'off'</Enable>
+                        <HorizontalAlignment>'center'</HorizontalAlignment>
+                        <Layout>
+                            <Column>14</Column>
+                            <Row>7</Row>
+                        </Layout>
+                        <ValueChangedFcn>ZoomEditFieldValueChanged</ValueChangedFcn>
+                    </NumericEditField>
+                    <Label name='BinaryThresholdLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <HorizontalAlignment>'center'</HorizontalAlignment>
+                        <Layout>
+                            <Column>21</Column>
+                            <Row>7</Row>
+                        </Layout>
+                        <Text>'Binary Threshold:'</Text>
+                    </Label>
+                    <NumericEditField name='BinaryThresholdEditField'>
+                        <Enable>'off'</Enable>
+                        <HorizontalAlignment>'center'</HorizontalAlignment>
+                        <Layout>
+                            <Column>22</Column>
+                            <Row>7</Row>
+                        </Layout>
+                        <Value>0.08</Value>
+                        <ValueChangedFcn>BinaryThresholdEditFieldValueChanged</ValueChangedFcn>
+                    </NumericEditField>
+                    <DropDown name='ChannelDropDown'>
+                        <Enable>'off'</Enable>
+                        <Items>{'Select Channel...'}</Items>
+                        <Layout>
+                            <Column>[1 8]</Column>
+                            <Row>8</Row>
+                        </Layout>
+                        <Value>'Select Channel...'</Value>
+                        <ValueChangedFcn>ChannelDropDownValueChanged</ValueChangedFcn>
+                    </DropDown>
+                    <Button name='LeftArrowZoom'>
+                        <ButtonPushedFcn>LeftArrowZoomButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'LeftArrow.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>10</Column>
+                            <Row>8</Row>
+                        </Layout>
+                        <Text>''</Text>
+                    </Button>
+                    <Slider name='ZoomSlider' label='ZoomLabel'>
+                        <Enable>'off'</Enable>
+                        <Layout>
+                            <Column>[11 16]</Column>
+                            <Row>[8 9]</Row>
+                        </Layout>
+                        <ValueChangedFcn>ZoomSliderValueChanged</ValueChangedFcn>
+                        <ValueChangingFcn>ZoomSliderValueChanging</ValueChangingFcn>
+                    </Slider>
+                    <Button name='RightArrowZoom'>
+                        <ButtonPushedFcn>RightArrowZoomButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'RightArrow.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>17</Column>
+                            <Row>8</Row>
+                        </Layout>
+                        <Text>''</Text>
+                    </Button>
+                    <Button name='LeftArrowBinary'>
+                        <ButtonPushedFcn>LeftArrowBinaryButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'LeftArrow.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>19</Column>
+                            <Row>8</Row>
+                        </Layout>
+                        <Text>''</Text>
+                    </Button>
+                    <Slider name='BinaryThresholdSlider' label='BinaryThresholdLabel'>
+                        <Enable>'off'</Enable>
+                        <Layout>
+                            <Column>[20 23]</Column>
+                            <Row>[8 9]</Row>
+                        </Layout>
+                        <Limits>[0 1]</Limits>
+                        <Value>0.08</Value>
+                        <ValueChangedFcn>BinaryThresholdSliderValueChanged</ValueChangedFcn>
+                    </Slider>
+                    <Button name='RightArrowBinary'>
+                        <ButtonPushedFcn>RightArrowBinaryButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'RightArrow.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>24</Column>
+                            <Row>8</Row>
+                        </Layout>
+                        <Text>''</Text>
+                    </Button>
+                    <Label name='R2ThresholdLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <Layout>
+                            <Column>[1 3]</Column>
+                            <Row>10</Row>
+                        </Layout>
+                        <Text>'R² Threshold:'</Text>
+                    </Label>
+                    <NumericEditField name='RThresholdEditField' label='R2ThresholdLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <Layout>
+                            <Column>4</Column>
+                            <Row>10</Row>
+                        </Layout>
+                        <Value>0.7</Value>
+                        <ValueChangedFcn>RThresholdEditFieldValueChanged</ValueChangedFcn>
+                    </NumericEditField>
+                    <Label name='NotesLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <Layout>
+                            <Column>[11 13]</Column>
+                            <Row>10</Row>
+                        </Layout>
+                        <Text>'Notes:'</Text>
+                    </Label>
+                    <Label name='AreaThresholdLabel'>
+                        <FontWeight>'bold'</FontWeight>
+                        <HorizontalAlignment>'center'</HorizontalAlignment>
+                        <Layout>
+                            <Column>21</Column>
+                            <Row>10</Row>
+                        </Layout>
+                        <Text>'Area Threshold:'</Text>
+                    </Label>
+                    <NumericEditField name='AreaThresholdEditField'>
+                        <Enable>'off'</Enable>
+                        <HorizontalAlignment>'center'</HorizontalAlignment>
+                        <Layout>
+                            <Column>22</Column>
+                            <Row>10</Row>
+                        </Layout>
+                        <Value>50</Value>
+                        <ValueChangedFcn>AreaThresholdEditFieldValueChanged</ValueChangedFcn>
+                    </NumericEditField>
+                    <Button name='PlayButton'>
+                        <ButtonPushedFcn>PlayButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'IconPlay.png'</Icon>
+                        <Layout>
+                            <Column>[2 5]</Column>
+                            <Row>[12 14]</Row>
+                        </Layout>
+                        <Text>'Play'</Text>
+                    </Button>
+                    <TextArea name='TextArea'>
+                        <Enable>'off'</Enable>
+                        <Layout>
+                            <Column>[11 17]</Column>
+                            <Row>[11 15]</Row>
+                        </Layout>
+                    </TextArea>
+                    <Button name='LeftArrowArea'>
+                        <ButtonPushedFcn>LeftArrowAreaButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'LeftArrow.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>19</Column>
+                            <Row>11</Row>
+                        </Layout>
+                        <Text>''</Text>
+                    </Button>
+                    <Slider name='AreaThresholdSlider' label='AreaThresholdLabel'>
+                        <Enable>'off'</Enable>
+                        <Layout>
+                            <Column>[20 23]</Column>
+                            <Row>[11 12]</Row>
+                        </Layout>
+                        <Limits>[1 100]</Limits>
+                        <Value>50</Value>
+                        <ValueChangedFcn>AreaThresholdSliderValueChanged</ValueChangedFcn>
+                    </Slider>
+                    <Button name='RightArrowArea'>
+                        <ButtonPushedFcn>RightArrowAreaButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Icon>'RightArrow.png'</Icon>
+                        <IconAlignment>'center'</IconAlignment>
+                        <Layout>
+                            <Column>24</Column>
+                            <Row>11</Row>
+                        </Layout>
+                        <Text>''</Text>
+                    </Button>
+                    <Button name='AnalyzeButton'>
+                        <ButtonPushedFcn>AnalyzeButtonPushed</ButtonPushedFcn>
+                        <Enable>'off'</Enable>
+                        <Layout>
+                            <Column>[7 9]</Column>
+                            <Row>[12 14]</Row>
+                        </Layout>
+                        <Text>'Analyze'</Text>
+                    </Button>
+                </Children>
+            </GridLayout>
+        </Children>
+    </UIFigure>
+    <RunConfiguration>
+        <StartupFcn>startupFcn</StartupFcn>
+    </RunConfiguration>
+    <AppDetails>
+        <Author>Kevin Holly, Allie Kumler</Author>
+        <Name>Sleep Spindle Detector v1.0</Name>
+        <Version>1.0</Version>
+    </AppDetails>
+    <InternalData>
+        <AppId>3f2e58b1-591f-4f48-8ecb-27395a862fdd</AppId>
+    </InternalData>
+    <!-- Thumbnail is used by file previewers. To change how the thumbnail is captured or stored, use the App Details dialog box in App Designer. -->
+    <Thumbnail autoCapture='true'>data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCACgANwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9k=</Thumbnail>
+</MATLABApp>

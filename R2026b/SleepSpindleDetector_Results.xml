@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<MATLABApp schemaVersion='1.0.0' release='R2026b.0' minRelease='R2026b'>
+    <UIFigure name='SleepSpindleDetectorResultsUIFigure'>
+        <Icon>'SleepSpindleIcon.PNG'</Icon>
+        <Name>'Sleep Spindle Detector: Results'</Name>
+        <Position>[100 100 1090 524]</Position>
+        <Children>
+            <Menu name='FileMenu'>
+                <Text>'File'</Text>
+                <Children>
+                    <Menu name='SaveasMenu'>
+                        <Text>'Save as...'</Text>
+                        <Children>
+                            <Menu name='AllMenu'>
+                                <MenuSelectedFcn>AllMenuSelected</MenuSelectedFcn>
+                                <Text>'All'</Text>
+                            </Menu>
+                            <Menu name='SummaryMenu'>
+                                <Text>'Summary'</Text>
+                                <Children>
+                                    <Menu name='EpochSummaryMenu'>
+                                        <Text>'Epoch Summary'</Text>
+                                    </Menu>
+                                    <Menu name='DurationsMenu'>
+                                        <Text>'Durations'</Text>
+                                    </Menu>
+                                </Children>
+                            </Menu>
+                            <Menu name='SpecificsMenu'>
+                                <Text>'Specifics'</Text>
+                                <Children>
+                                    <Menu name='PrimaryMenu'>
+                                        <Text>'Primary'</Text>
+                                    </Menu>
+                                    <Menu name='SecondaryMenu'>
+                                        <Text>'Secondary'</Text>
+                                    </Menu>
+                                </Children>
+                            </Menu>
+                            <Menu name='BinaryClassificationsMenu'>
+                                <Text>'Binary Classifications'</Text>
+                            </Menu>
+                            <Menu name='GroundTruthMenu'>
+                                <Text>'GroundTruth'</Text>
+                            </Menu>
+                            <Menu name='StatsMenu'>
+                                <Text>'Stats'</Text>
+                            </Menu>
+                        </Children>
+                    </Menu>
+                    <Menu name='LoadMenu'>
+                        <Text>'Load'</Text>
+                        <Children>
+                            <Menu name='GroundTruthMenu_2'>
+                                <Text>'Ground Truth'</Text>
+                            </Menu>
+                        </Children>
+                    </Menu>
+                </Children>
+            </Menu>
+            <Menu name='Menu'>
+            </Menu>
+            <Menu name='FileMenu_2'>
+                <Text>'File'</Text>
+                <Visible>'off'</Visible>
+                <Children>
+                    <Menu name='SaveasMenu_2'>
+                        <Text>'Save as..'</Text>
+                        <Children>
+                            <Menu name='PrimaryMenu_2'>
+                                <Text>'Primary'</Text>
+                            </Menu>
+                            <Menu name='SecondaryMenu_2'>
+                                <Text>'Secondary'</Text>
+                            </Menu>
+                        </Children>
+                    </Menu>
+                </Children>
+            </Menu>
+            <Menu name='FileMenu_3'>
+                <Text>'File'</Text>
+                <Visible>'off'</Visible>
+                <Children>
+                    <Menu name='SaveasMenu_3'>
+                        <Text>'Save as...'</Text>
+                    </Menu>
+                </Children>
+            </Menu>
+            <Menu name='StatsMenu_2'>
+                <Text>'Stats'</Text>
+                <Visible>'off'</Visible>
+                <Children>
+                    <Menu name='CalculateMenu'>
+                        <Text>'Calculate'</Text>
+                    </Menu>
+                </Children>
+            </Menu>
+            <TabGroup name='TabGroup'>
+                <Position>[1 4 1078 521]</Position>
+                <Children>
+                    <Tab name='SummaryTab'>
+                        <Title>'Summary'</Title>
+                        <Children>
+                            <Panel name='PrimaryPanel'>
+                                <FontSize>16</FontSize>
+                                <FontWeight>'bold'</FontWeight>
+                                <Position>[31 15 490 92]</Position>
+                                <Title>'Primary'</Title>
+                                <TitlePosition>'centertop'</TitlePosition>
+                                <Children>
+                                    <Table name='PrimaryUITable'>
+                                        <ColumnName>{'mean duration (s)'; 'std duration (s)'; 'median duration (s)'}</ColumnName>
+                                        <Position>[0 0 490 67]</Position>
+                                        <RowName>{}</RowName>
+                                    </Table>
+                                </Children>
+                            </Panel>
+                            <Panel name='SecondaryPanel'>
+                                <FontSize>16</FontSize>
+                                <FontWeight>'bold'</FontWeight>
+                                <Position>[554 15 490 92]</Position>
+                                <Title>'Secondary'</Title>
+                                <TitlePosition>'centertop'</TitlePosition>
+                                <Children>
+                                    <Table name='SecondaryUITable'>
+                                        <ColumnName>{'mean duration (s)'; 'std duration (s)'; 'median duration (s)'}</ColumnName>
+                                        <Position>[0 0 490 67]</Position>
+                                        <RowName>{}</RowName>
+                                    </Table>
+                                </Children>
+                            </Panel>
+                            <Table name='EpochSummaryUITable'>
+                                <ColumnName>{'Epoch'; 'SpindleCount_primary'; 'SpindleCount_secondary'; 'Spindle_percentage'; 'Spindle_percentage_secondary'; 'Sleep_percentage'; 'Sleep_percentage_secondary'}</ColumnName>
+                                <Position>[31 118 1015 348]</Position>
+                                <RowName>{}</RowName>
+                            </Table>
+                            <Label name='SummaryLabel'>
+                                <FontSize>18</FontSize>
+                                <FontWeight>'bold'</FontWeight>
+                                <HorizontalAlignment>'center'</HorizontalAlignment>
+                                <Position>[1 465 1073 22]</Position>
+                                <Text>'Summary'</Text>
+                            </Label>
+                        </Children>
+                    </Tab>
+                    <Tab name='SleepSleepSpecificsTab'>
+                        <Title>'Sleep Sleep Specifics'</Title>
+                        <Children>
+                            <TabGroup name='TabGroup2'>
+                                <Position>[0 1 1074 496]</Position>
+                                <Children>
+                                    <Tab name='PrimaryClassificationTab'>
+                                        <Title>'Primary Classification'</Title>
+                                        <Children>
+                                            <Table name='PrimarySpecifics'>
+                                                <ColumnName>{'Timestamp Type'; 'Epoch'; 'Epochtime'; 'Time'; 'Duration (s)'; 'Max Amplitude'; 'Mean Amplitude'; 'Median Amplitude'}</ColumnName>
+                                                <Position>[1 -1 1072 473]</Position>
+                                                <RowName>{}</RowName>
+                                            </Table>
+                                        </Children>
+                                    </Tab>
+                                    <Tab name='SecondaryClassifcationTab'>
+                                        <Title>'Secondary Classifcation'</Title>
+                                        <Children>
+                                            <Table name='SecondarySpecifics'>
+                                                <ColumnName>{'Timestamp Type'; 'Epoch'; 'Epochtime'; 'Time'; 'Duration (s)'; 'Max Amplitude'; 'Mean Amplitude'; 'Median Amplitude'}</ColumnName>
+                                                <Position>[1 1 1072 471]</Position>
+                                                <RowName>{}</RowName>
+                                            </Table>
+                                        </Children>
+                                    </Tab>
+                                </Children>
+                            </TabGroup>
+                        </Children>
+                    </Tab>
+                    <Tab name='ValidationTab'>
+                        <Title>'Validation'</Title>
+                        <Children>
+                            <UIAxes name='UIAxes'>
+                                <Alphamap>[]</Alphamap>
+                                <Position>[324 103 749 259]</Position>
+                                <Title>
+                                    <String>'Title'</String>
+                                </Title>
+                                <Toolbar>
+                                    <Visible>'off'</Visible>
+                                </Toolbar>
+                                <XLabel>
+                                    <String>'X'</String>
+                                </XLabel>
+                                <ZLabel>
+                                    <String>'Z'</String>
+                                </ZLabel>
+                            </UIAxes>
+                            <Table name='BinaryUITable'>
+                                <ColumnName>{'Primary'; 'Secondary'}</ColumnName>
+                                <Position>[27 57 170 423]</Position>
+                                <RowName>{}</RowName>
+                            </Table>
+                            <Table name='UITable'>
+                                <ColumnName>{'TP'; 'TN'; 'FP'; 'FN'; 'Sensitivity'; 'Specificity'; 'Accuracy'; 'MCC'; 'F-score'}</ColumnName>
+                                <Position>[342 370 718 106]</Position>
+                                <RowName>{}</RowName>
+                            </Table>
+                            <Button name='CaculateButton'>
+                                <ButtonPushedFcn>CaculateButtonPushed</ButtonPushedFcn>
+                                <Position>[31 21 100 22]</Position>
+                                <Text>'Caculate'</Text>
+                            </Button>
+                            <Table name='GroundTruthUITable'>
+                                <ColumnName>'Ground Truth'</ColumnName>
+                                <Position>[208 57 117 423]</Position>
+                                <RowName>{}</RowName>
+                            </Table>
+                            <Button name='LoadGroundTruthButton'>
+                                <ButtonPushedFcn>LoadGroundTruthButtonPushed</ButtonPushedFcn>
+                                <Position>[208 21 116 22]</Position>
+                                <Text>'Load Ground Truth'</Text>
+                            </Button>
+                            <Button name='PlotGroundTruthButton'>
+                                <ButtonPushedFcn>PlotGroundTruthButtonPushed</ButtonPushedFcn>
+                                <Enable>'off'</Enable>
+                                <Position>[368 63 110 22]</Position>
+                                <Text>'Plot Ground Truth'</Text>
+                            </Button>
+                            <Button name='GraphPredictionsButton'>
+                                <Position>[366 24 112 22]</Position>
+                                <Text>'Graph Predictions'</Text>
+                            </Button>
+                            <Label name='ProgressTextLabel'>
+                                <Position>[1 1 461 22]</Position>
+                                <Text>'ProgressText'</Text>
+                                <Visible>'off'</Visible>
+                            </Label>
+                        </Children>
+                    </Tab>
+                    <Tab name='Tab'>
+                        <Title>'Tab'</Title>
+                    </Tab>
+                </Children>
+            </TabGroup>
+        </Children>
+    </UIFigure>
+    <RunConfiguration>
+        <StartupFcn>startupFcn</StartupFcn>
+    </RunConfiguration>
+    <AppDetails>
+        <Name>Sleep Spindle Detector: Results</Name>
+        <Version>1.0</Version>
+    </AppDetails>
+    <InternalData>
+        <AppId>4f9b5604-acdb-4083-b963-e2e25c93b8a2</AppId>
+    </InternalData>
+    <!-- Thumbnail is used by file previewers. To change how the thumbnail is captured or stored, use the App Details dialog box in App Designer. -->
+    <Thumbnail autoCapture='true'></Thumbnail>
+</MATLABApp>
